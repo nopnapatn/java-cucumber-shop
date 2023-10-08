@@ -1,3 +1,5 @@
+// 6410450133 nopnapat norasri
+
 package ku.shop;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -33,6 +35,7 @@ public class BuyStepdefs {
         assertEquals(total, order.getTotal());
     }
 
+    // add this method for show stock when user buy product
     @Then("product {string} stock should be {int}")
     public void product_stock_should_be(String name, int expectedStock) {
         Product prod = catalog.getProduct(name);
