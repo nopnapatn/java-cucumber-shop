@@ -1,10 +1,10 @@
 package ku.shop;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BuyStepdefs {
 
@@ -32,5 +32,10 @@ public class BuyStepdefs {
     public void total_should_be(double total) {
         assertEquals(total, order.getTotal());
     }
-}
 
+    @Then("product {string} stock should be {int}")
+    public void product_stock_should_be(String name, int expectedStock) {
+        Product prod = catalog.getProduct(name);
+        assertEquals(expectedStock, prod.getStock());
+    }
+}
